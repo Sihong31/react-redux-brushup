@@ -1,0 +1,2 @@
+export const FETCH_PUPPIES = 'FETCH_PUPPIES';
+export const FETCH_PUPPY = 'FETCH_PUPPY';
