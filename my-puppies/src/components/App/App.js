@@ -1,10 +1,13 @@
 import React from 'react';
-
 import './App.scss';
+import Header from '../Header/Header';
 
-function App() {
+const App = () => {
   return (
-    <div className="App"></div>
+    <>
+      <Header />
+      <div className="App"></div>
+    </>
   );
 }
 
