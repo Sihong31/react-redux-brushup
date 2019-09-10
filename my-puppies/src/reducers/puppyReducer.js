@@ -1,8 +1,9 @@
-import _ from 'lodash';
-
 import {
     FETCH_PUPPIES,
-    FETCH_PUPPY
+    FETCH_PUPPY,
+    CREATE_PUPPY,
+    EDIT_PUPPY,
+    DELETE_PUPPY
 } from '../actions/types';
 
 const MOCK_PUPPIES = {
@@ -41,8 +42,15 @@ export default (state = MOCK_PUPPIES, action) => {
         case FETCH_PUPPIES:
             return { ...state };
         case FETCH_PUPPY:
-            const puppiesCopy = { ...MOCK_PUPPIES };
+            const puppiesCopy = { ...state };
             return { ...state, [action.payload]: puppiesCopy[action.payload] };
+        case CREATE_PUPPY:
+            const currentCountIncrement = Object.keys({ ...state}).length;
+            return { ...state, [currentCountIncrement]: action.payload };
+        case EDIT_PUPPY:
+            return { ...state};
+        case DELETE_PUPPY:
+            return { ...state};
         default:
             return state;
     }

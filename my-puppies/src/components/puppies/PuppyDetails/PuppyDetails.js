@@ -15,9 +15,9 @@ class PuppyDetails extends Component {
         return (
             <div className="PuppyDetails">
                 <div className="PuppyDetails-avatar">
-                    <img src={ imageUrl } alt="Puppy Image" />
+                    <img src={ imageUrl } alt="Puppy" />
                 </div>
-                <h2>{ name }</h2>
+                <h2>{ name }</h2>   
                 <div className="PuppyDetails-details">
                     <p>Price: ${ price }</p>
                     <p>Age: { age }</p>
