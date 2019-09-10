@@ -1,0 +1,24 @@
+.PuppyCard {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    position: relative;
+    width: 250px;
+    .PuppyCard-image-wrapper {
+        img {
+            width: 100%;
+        }
+    }
+    .PuppyCard-details {
+        padding: 16px;
+        h4 {
+            margin-bottom: 16px;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

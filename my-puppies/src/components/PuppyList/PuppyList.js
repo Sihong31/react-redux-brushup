@@ -21,7 +21,9 @@ class PuppyList extends Component {
     render() {
         return (
             <div className="PuppyList">
-                { this.renderList() }
+                <div className="puppy-wrapper">
+                    { this.renderList() }
+                </div>
             </div>
         );
     }

@@ -1,3 +1,12 @@
 .PuppyList {
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 32px;
+    .puppy-wrapper {
+        max-width: 91%;
+        margin: 0 auto;
+        .PuppyCard:nth-child(3n+0) {
+            margin-right: 0;
+        }
+    }
 }
