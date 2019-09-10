@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './PuppyList.scss';
 import PuppyCard from './PuppyCard/PuppyCard';
-import { fetchPuppies } from '../../actions';
+import { fetchPuppies } from '../../../actions';
 
 class PuppyList extends Component {
     componentDidMount() {
         this.props.fetchPuppies();
-        console.log(this.props);
     }
 
     renderList() {
         let puppiesArray = Object.values(this.props.puppies);
         return puppiesArray.map((puppy, index) => {
-            return <PuppyCard key={index} { ...puppy} />
+            return (
+                <Link to={`/puppies/${index}`} key={index}>
+                    <PuppyCard { ...puppy} />
+                </Link>
+            );
         });
     }
 

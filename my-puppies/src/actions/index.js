@@ -3,8 +3,8 @@ import {
     FETCH_PUPPIES
 } from './types';
 
-export const fetchPuppy = () => {
-    return { type: FETCH_PUPPY }
+export const fetchPuppy = (puppyId) => {
+    return { type: FETCH_PUPPY, payload: puppyId }
 }
 
 export const fetchPuppies = () => {

@@ -1,0 +1,19 @@
+.PuppyDetails {
+    margin-top: 32px;
+    text-align: center;
+    .PuppyDetails-avatar {
+        margin: 0 auto;
+        border-radius: 20px;
+        width: 400px;
+        height: 300px;
+        object-fit: contain;
+        img {
+            width: 100%;
+        }
+    }
+    .PuppyDetails-details {
+        p {
+            margin: 0;
+        }
+    }
+}
