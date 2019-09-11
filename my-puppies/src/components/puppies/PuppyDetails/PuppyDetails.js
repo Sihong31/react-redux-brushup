@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchPuppy } from '../../../actions';
@@ -23,6 +24,9 @@ class PuppyDetails extends Component {
                     <p>Age: { age }</p>
                     <p>Weight: { weight }</p>
                 </div>
+                <Link to={`/puppies/edit/${this.props.match.params.id}`}>
+                    <button style={{ marginTop: '10px' }} className="btn btn-primary">Edit Puppy</button>
+                </Link>
             </div>
         )
     }

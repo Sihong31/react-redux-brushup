@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import PuppyList from '../puppies/PuppyList/PuppyList';
 import PuppyCreate from '../puppies/PuppyCreate/PuppyCreate';
 import PuppyDetails from '../puppies/PuppyDetails/PuppyDetails';
+import PuppyEdit from '../puppies/PuppyEdit/PuppyEdit';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
             <Switch>
               <Route path="/" exact component={ PuppyList } />
               <Route path="/puppies/new" component={ PuppyCreate } />
-              <Route path="/puppies/edit/:id" component={ PuppyCreate } />
+              <Route path="/puppies/edit/:id" component={ PuppyEdit } />
               <Route path="/puppies/:id" component={ PuppyDetails } />
             </Switch>
           </div>

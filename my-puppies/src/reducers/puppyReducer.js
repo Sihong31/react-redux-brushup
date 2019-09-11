@@ -48,7 +48,7 @@ export default (state = MOCK_PUPPIES, action) => {
             const currentCountIncrement = Object.keys({ ...state}).length;
             return { ...state, [currentCountIncrement]: action.payload };
         case EDIT_PUPPY:
-            return { ...state};
+            return { ...state, [action.payload.puppyId]: action.payload.updatedPuppy };
         case DELETE_PUPPY:
             return { ...state};
         default:
