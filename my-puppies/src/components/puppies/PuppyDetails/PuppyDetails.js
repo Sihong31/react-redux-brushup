@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { fetchPuppy } from '../../../actions';
+import { fetchPuppy, deletePuppy } from '../../../actions';
 import './PuppyDetails.scss';
+import history from '../../../history';
 
 class PuppyDetails extends Component {
     componentDidMount() {
         this.props.fetchPuppy(this.props.match.params.id);
+    }
+
+    onEditPuppy = () => {
+        history.push(`/puppies/edit/${this.props.match.params.id}`);
+    }
+
+    onDeletePuppy = () => {
+        this.props.deletePuppy(this.props.match.params.id);
+        history.push('/');
     }
 
     render() {
@@ -24,9 +33,10 @@ class PuppyDetails extends Component {
                     <p>Age: { age }</p>
                     <p>Weight: { weight }</p>
                 </div>
-                <Link to={`/puppies/edit/${this.props.match.params.id}`}>
-                    <button style={{ marginTop: '10px' }} className="btn btn-primary">Edit Puppy</button>
-                </Link>
+                <div className="PuppyDetails-buttons">
+                    <button className="btn btn-primary" onClick={ this.onEditPuppy }>Edit Puppy</button>
+                    <button className="btn btn-danger" onClick={ this.onDeletePuppy }>Delete Puppy</button>
+                </div>
             </div>
         )
     }
@@ -40,7 +50,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchPuppy: (puppyId) => dispatch(fetchPuppy(puppyId))
+        fetchPuppy: (puppyId) => dispatch(fetchPuppy(puppyId)),
+        deletePuppy: (puppyId) => dispatch(deletePuppy(puppyId))
     }
 }
 

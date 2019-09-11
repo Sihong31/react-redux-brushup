@@ -12,10 +12,13 @@ class PuppyList extends Component {
     }
 
     renderList() {
-        let puppiesArray = Object.values(this.props.puppies);
-        return puppiesArray.map((puppy, index) => {
+        let puppiesArray = [];
+        Object.keys(this.props.puppies).map(puppyId => {
+            puppiesArray.push({ ...this.props.puppies[puppyId], puppyId});
+        })
+        return puppiesArray.map((puppy) => {
             return (
-                <Link to={`/puppies/${index}`} key={index}>
+                <Link to={`/puppies/${puppy.puppyId}`} key={puppy.puppyId}>
                     <PuppyCard { ...puppy} />
                 </Link>
             );

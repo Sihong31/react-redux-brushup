@@ -45,12 +45,13 @@ export default (state = MOCK_PUPPIES, action) => {
             const puppiesCopy = { ...state };
             return { ...state, [action.payload]: puppiesCopy[action.payload] };
         case CREATE_PUPPY:
-            const currentCountIncrement = Object.keys({ ...state}).length;
-            return { ...state, [currentCountIncrement]: action.payload };
+            const randomId = Math.floor((Math.random() * 1000000) + 1);
+            return { ...state, [randomId]: action.payload };
         case EDIT_PUPPY:
             return { ...state, [action.payload.puppyId]: action.payload.updatedPuppy };
         case DELETE_PUPPY:
-            return { ...state};
+            const { [action.payload]: value, ...withoutDeletedPuppy } = state;
+            return { ...withoutDeletedPuppy };
         default:
             return state;
     }
