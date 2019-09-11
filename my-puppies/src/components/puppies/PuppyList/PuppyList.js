@@ -14,7 +14,7 @@ class PuppyList extends Component {
     renderList() {
         let puppiesArray = [];
         Object.keys(this.props.puppies).map(puppyId => {
-            puppiesArray.push({ ...this.props.puppies[puppyId], puppyId});
+            return puppiesArray.push({ ...this.props.puppies[puppyId], puppyId});
         })
         return puppiesArray.map((puppy) => {
             return (
